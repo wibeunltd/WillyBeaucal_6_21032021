@@ -1,6 +1,10 @@
+// Déclaration et utilisation du module standard http pour créer le serveur HTTP
 const http = require('http');
+
+// Déclaration de la constante app, pour la création de l'instance de l'application
 const app = require('./app');
 
+// Configuration du port d'écoute
 const normalizePort = val => {
   const port = parseInt(val, 10);
 
@@ -35,6 +39,7 @@ const errorHandler = error => {
   }
 };
 
+// Lancement serveur
 const server = http.createServer(app);
 
 server.on('error', errorHandler);
@@ -44,4 +49,5 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
+// Port d'écoute du serveur
 server.listen(port);
