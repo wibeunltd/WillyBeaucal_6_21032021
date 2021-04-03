@@ -14,7 +14,7 @@ exports.createSauce = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-// Modification d'une sauce avec suppression de l'ancienne image, en cas de modification d'image
+// Modification d'une sauce avec suppression de l'ancienne image en cas de modification d'image
 exports.modifySauce = (req, res, next) => {
     const sauceObject = req.file ?
         {
@@ -89,13 +89,12 @@ exports.likeStatusSauce = (req, res, next) => {
         case 0:
             Sauce.findOne({ _id: req.params.id })
                 .then((sauce) => {
-                    // L'utilisateur a aimé la sauce
                     if (sauce.usersLiked.includes(userID)) {
                         Sauce.updateOne({ _id: req.params.id }, { $inc: { likes: -1 }, $pull: { usersLiked : userID } })
                             .then(() => res.status(200).json({ message: "L'utilisateur annule le fait d'aimer la sauce !"}))
                             .catch(error => res.status(400).json({ error }));
                     } else {
-                        Sauce.updateOne({ _id: req.params.id }, { $inc: { dislikes: -1 }, $pull: { usersDiskliked : userID } })
+                        Sauce.updateOne({ _id: req.params.id }, { $inc: { dislikes: -1 }, $pull: { usersDisliked : userID } })
                             .then(() => res.status(200).json({ message: "L'utilisateur annule le fait de ne plus aimer la sauce !"}))
                             .catch(error => res.status(400).json({ error }));
                     }

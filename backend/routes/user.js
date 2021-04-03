@@ -1,4 +1,4 @@
-// Déclarations et imports des modules requis 
+// Déclarations des modules requis 
 const express = require ('express');
 const router = express.Router();
 
