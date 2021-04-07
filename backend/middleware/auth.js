@@ -1,3 +1,4 @@
+// Déclarations des modules requis
 const jwt = require('jsonwebtoken');
 
 // Sécurisation des variables d'environnement par un stockage séparé

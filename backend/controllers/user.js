@@ -1,3 +1,4 @@
+// Déclarations des modules requis
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const MaskData = require('maskdata');
@@ -9,7 +10,7 @@ const User = require('../models/User');
 
 // Inscription d'un nouvel utilisateur
 exports.signup = (req, res, next) => {
-    bcrypt.hash(req.body.password, 10)
+        bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
                 email: MaskData.maskEmail2(req.body.email),
@@ -17,7 +18,7 @@ exports.signup = (req, res, next) => {
             });
             user.save()
                 .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
-                .catch(error => res.status(400).json({ error }));
+                .catch(() => res.status(400).json({ error }));
         })
         .catch(error => res.status(500).json({ error }));
 };

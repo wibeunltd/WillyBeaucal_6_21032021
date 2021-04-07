@@ -1,4 +1,4 @@
-// Déclarations et imports des modules requis
+// Déclarations des modules requis
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 

@@ -25,7 +25,7 @@ const app = express();
 // Sécurisation contre les attaques XSS
 app.use(helmet());
 
-// Permission les requêtes CORS
+// Permission des requêtes CORS
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');

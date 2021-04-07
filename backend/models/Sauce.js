@@ -1,3 +1,4 @@
+// Déclarations des modules requis
 const mongoose = require('mongoose');
 
 // Schéma de données pour une sauce

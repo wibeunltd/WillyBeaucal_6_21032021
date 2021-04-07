@@ -1,3 +1,4 @@
+// Déclarations des modules requis
 const Sauce = require('../models/Sauce');
 const fs = require('fs');
 
@@ -14,7 +15,7 @@ exports.createSauce = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-// Modification d'une sauce avec suppression de l'ancienne image en cas de modification d'image
+// Modification d'une sauce avec suppression de l'ancienne image lors d'une modification d'image
 exports.modifySauce = (req, res, next) => {
     const sauceObject = req.file ?
         {
