@@ -10,11 +10,11 @@ exports.passwordValidation = (req, res, next) => {
     }
 };
 
+
 // Validation des inputs d'une sauce, seuls les caractères alpha-numériques et . - , sont autorisés
 exports.sauceFormValidation = (req, res, next) => {
-    const sauce = JSON.parse(req.body.sauce);
     const sauceInputValidation = new RegExp('^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ,-.\'!]*$');
-    if (sauceInputValidation.test(sauce.name) && sauceInputValidation.test(sauce.manufacturer) && sauceInputValidation.test(sauce.description) && sauceInputValidation.test(sauce.mainPepper)) {
+    if (sauceInputValidation.test(req.body.name) && sauceInputValidation.test(req.body.manufacturer) && sauceInputValidation.test(req.body.description) && sauceInputValidation.test(req.body.mainPepper)) {
         next();
     } else {
         return res.status(400).json({ error: "Merci de n'utiliser ques des caractères alpha-numériques ou les symboles , . - ' !" });
