@@ -42,7 +42,7 @@ DB_NAME=<db name>
 // Token
 TOKEN=<token>
 ```
-- Créer une base de données Mongo et remplacer les éléments entre <> par vos informations. Remplacer <token> par un token de votre choix.
+- Créer une base de données Mongo et remplacer les éléments entre <> par vos informations. Remplacer `<token>` par un token de votre choix.
 
 ```
 Exemple de modifications correctes
