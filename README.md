@@ -28,4 +28,32 @@ So Pekocko
     
 - Si la commande npm start ou ng serve n'aboutit pas correctement, installer node-sass à part.
 
-- Afin de faire fonctionner correctement le projet, veuillez consulter le fichier `compléments.pdf` fournit dans le livrable.
+## Utilisation
+- L'API ne sera fonctionnelle qu'après quelques modifications. Vous pouvez télécharger ou cloner le projet.
+- Dans le dossier backend, vous trouverez un fichier .env.txt, que vous devrez renommer en .env
+
+```
+// Base de données Mongo
+DB_USER=<db user>
+DB_PASS=<db password>
+DB_URL=<db url>
+DB_NAME=<db name>
+
+// Token
+TOKEN=<token>
+```
+- Créer une base de données Mongo et remplacer les éléments entre <> par vos informations. Remplacer <token> par un token de votre choix.
+
+```
+Exemple de modifications correctes
+// Base de données Mongo
+DB_USER=user
+DB_PASS=monmotdepasse
+DB_URL=masuperbd.mlkss.mongodb.net
+DB_NAME=masuperbd
+
+// Token
+TOKEN=MON_TOKEN_SECRET
+```
+
+- Vous pouvez profiter de l'API
